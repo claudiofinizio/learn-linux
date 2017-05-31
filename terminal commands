@@ -1,0 +1,82 @@
+Stop / allow terminal from wrapping lines
+=========================================
+
+tput rmam
+tput smam
+
+
+Nice terminal prompt
+====================
+PS1='\e[92m\A \e[34m\[\u@\e[37m\W\]$ '
+
+
+Stash prima e poi recuepra lo stashed
+=====================================
+git stash
+e quando vuoi recuperare cosa hai 'stashed':
+git stash apply
+Puoi poi battere git diff e vedi che tutto lo stashed adesso risulta aggiunto (cioè recuperato).
+
+
+Elimina tutti i files pyc da un progetto
+========================================
+cd nella cartella del progetto e batti:
+find . -name \*.pyc -delete
+
+
+Terminal PS1 settings
+=====================
+PS1='\e[92m\A \e[34m\[\u@\e[37m\W\]$ '
+
+
+Terminal tabs settings (active takes a different color)
+=======================================================
+1. Create the file ~/.config/gtk-3.0/gtk.css
+(questo lo fai digitando "touch ~/.config/gtk-3.0/gtk.css")
+2. Paste this as the contents using your desired color:
+
+TerminalWindow .notebook tab {
+    background-color: #dbd9ba;
+}
+TerminalWindow .notebook tab:active {
+    background-color: #fff;
+}
+
+
+Git checkout a un vecchio commit, in un nuovo branch
+====================================================
+Questa operazione ha senso se dvi rivedere il codice vecchio di qualche giorno
+e ricordarti di come funzionava.
+
+git checkout -b newbranch ea3d5ed
+dove "ea3d5ed" è la SHA del commit che ottieni da git log
+
+
+Delete a branch (quando non ti serve più)
+=========================================
+git branch -d NOME_BRANCH
+esempio:
+qui ho fatto due "git branch" prima e dopo la cancellazione, per mostrare che il comando funziona:
+18:31 plottigat@fbk_easyconfig$ git branch
+* claudio
+  master
+  memory
+18:31 plottigat@fbk_easyconfig$ git branch -d memory 
+Deleted branch memory (was 72b16b1).
+18:32 plottigat@fbk_easyconfig$ git branch
+* claudio
+  master
+18:32 plottigat@fbk_easyconfig$ git push ^C
+18:32 plottigat@fbk_easyconfig$ 
+18:32 plottigat@fbk_easyconfig$ 
+
+
+Installare pip
+==============
+PROVA CON QUESTO:
+easy_install pip 
+SE NON FUNZIONA, SCARICA PIP SENZA USRE IL TERMINALE:
+(1) scarica pip da https://bootstrap.pypa.io/get-pip.py
+(2) dal terminale, batti: cd ~/Downloads/
+(3) dal terminale, batti: python get-pip.py 
+

@@ -1,0 +1,5 @@
+Difference RPM and DEB installation files
+=========================================
+The .deb files are meant for distributions of Linux that derive from Debian (Ubuntu, Linux Mint, etc.). The .rpm files are used primarily by distributions that derive from Redhat based distros (Fedora, CentOS, RHEL).
+
+
